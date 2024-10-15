@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* id=smile rotate */
+    #smile {
+      margin: 100px;
+      width: 200px;
+      height: 200px;
+      font-size: 10rem;
+      animation: smile 1s infinite;
+    }
+    /* rotate animation */
+    @keyframes smile {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Set Your Groq API Key</h1>
+  <input type="text" id="apiKeyInput" placeholder="Enter your Groq API Key" />
+  <button id="saveApiKey">Save API Key</button>
+  <h2 id="statusMessage"></h2>
+  <h1 id="smile">🙂</h1>
+
+  <script src="./options.js"></script>
+</body>
+</html>

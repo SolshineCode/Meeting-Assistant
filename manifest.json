@@ -1,0 +1,34 @@
+{
+"action": {
+"default_icon": "images/extension-128.png"
+},
+"background": {
+"service_worker": "background.js"
+},
+"content_scripts": [ {
+"matches": ["https://meet.google.com/*"],
+"js": ["./content.js", "./message_passer.js", "./close_caption_extraction.js"],
+"css": ["./index.css"],
+"run_at": "document_idle"
+} ],
+"content_security_policy": {
+"extension_pages": "script-src 'self'; object-src 'self'"
+},
+"description": "Revamp your virtual meetings with an AI-powered response generator that leverages ChatGPT and temporary discussion records.",
+"host_permissions": [ "https://tech-int-cheat-backend.herokuapp.com/infer_response" ],
+"icons": {
+"128": "images/extension-128.png",
+"32": "images/extension-32.png",
+"48": "images/extension-48.png"
+},
+"manifest_version": 3,
+"name": "tech-int-cheat2",
+"options_page": "options.html",
+"permissions": [ "storage", "webNavigation", "activeTab", "tabs" ],
+"update_url": "https://clients2.google.com/service/update2/crx",
+"version": "1.1.0",
+"web_accessible_resources": [ {
+"matches": [ "\u003Call_urls>" ],
+"resources": [ "index.html", "/static/*", "finder.js" ]
+} ]
+}
